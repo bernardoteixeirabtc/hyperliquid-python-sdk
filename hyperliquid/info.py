@@ -75,6 +75,9 @@ class Info(API):
         """
         return self.post("/info", {"type": "openOrders", "user": address})
 
+    def orderStatus(self, address: str, oid: int) -> Any:
+        return self.post("/info", {"type": "orderStatus", "user": address, "oid": oid})
+        
     def all_mids(self) -> Any:
         """Retrieve all mids for all actively traded coins.
 
